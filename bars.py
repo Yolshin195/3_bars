@@ -66,7 +66,7 @@ def distBar(latitude1, latitude2, Longitude1, longitude2, rad=6372795):
 
 if __name__ == '__main__':
     data = load_json_data(sys.argv[1])
-    dataOutpyt = None
+    dataOutput = None
 
     print("""
     1 - Самый большой бар
@@ -77,13 +77,13 @@ if __name__ == '__main__':
     i = input("Ведите число от 1 до 3: ")
 
     if i == "1":
-        dataOutpyt = get_biggest_bar(data), "Самый большой бар"
+        dataOutput = get_biggest_bar(data), "Самый большой бар"
 
     elif i == "2":
-        dataOutpyt = get_smallest_bar(data), "Самый маленький бар"
+        dataOutput = get_smallest_bar(data), "Самый маленький бар"
 
     elif i == "3":
-        dataOutpyt = get_closest_bar(
+        dataOutput = get_closest_bar(
             data,
             input("Введите широту: "),
             input("Введите долготу: ")
@@ -92,7 +92,7 @@ if __name__ == '__main__':
     else:
         print("Ошибка ввода")
 
-    if dataOutpyt:
+    if dataOutput:
         print("""
     *** {} ***
 
@@ -102,4 +102,4 @@ if __name__ == '__main__':
     Адрес: {Address}
     Контактные данные: {PublicPhone[0][PublicPhone]}
     Количество сидячих мест: {SeatsCount}
-        """.format(dataOutpyt[1], **dataOutpyt[0]))
+        """.format(dataOutput[1], **dataOutput[0]))
